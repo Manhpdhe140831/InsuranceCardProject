@@ -7,21 +7,21 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Table(name = "tbl_account")
+@Table(name = "tbl_Profile")
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Account {
+public class Information {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    @Column(name = "username")
-    private String username;
-
-    @Column(name = "password")
-    private String password;
+    private Long id;
+    private String name;
+    private String folk;
+    private int gender;
+    private String brithDate;
+    private String address;
+    private String phone;
 
 }
