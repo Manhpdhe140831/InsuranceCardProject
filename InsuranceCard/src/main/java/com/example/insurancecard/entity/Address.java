@@ -7,25 +7,24 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Table(name = "tbl_account")
+@Table(name = "tbl_address")
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Account {
+public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "country", length = 255)
+    private String country;
+    @Column(name = "city", length = 255)
+    private String city;
+    @Column(name = "district", length = 255)
+    private String district;
+    @Column(name = "street", length = 255)
+    private String street;
 
-    @Column(name = "username", length = 255)
-    private String username;
-
-    @Column(name = "password", length = 255)
-    private String password;
-
-    @ManyToOne
-    @JoinColumn(name = "role_id", nullable = false)
-    private Role role;
 
 }

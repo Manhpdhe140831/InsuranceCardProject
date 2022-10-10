@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Table(name = "tbl_Profile")
 @Entity
@@ -16,12 +18,22 @@ import javax.persistence.*;
 public class Information {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
+    @Column(name = "code", length = 255)
+    private String code;
+    @Column(name = "fullName", length = 255)
     private String name;
-    private String folk;
+    @Column(name = "gender")
     private int gender;
-    private String brithDate;
-    private String address;
+    @Column(name = "nationality", length = 255)
+    private String folk;
+    @Column(name = "birthDate")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date brithDate;
+    @Column(name = "phoneNumber", length = 10)
     private String phone;
+
+
+    
 
 }
