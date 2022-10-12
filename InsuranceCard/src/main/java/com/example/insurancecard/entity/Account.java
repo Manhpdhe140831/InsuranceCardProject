@@ -18,14 +18,18 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "username", length = 255)
+    @Column(name = "username")
     private String username;
 
-    @Column(name = "password", length = 255)
+    @Column(name = "password")
     private String password;
 
-    @ManyToOne
-    @JoinColumn(name = "role_id", nullable = false)
-    private Role role;
+    @Column(name = "role", nullable = false)
+    private long roleId;
+    @Column(name = "roleName", nullable = false, length = 255)
+    private String roleName;
+
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL)
+    private Information information;
 
 }

@@ -27,4 +27,16 @@ public class AccountServiceImpl implements AccountService {
         }
         return result;
     }
+
+    @Override
+    public AccountDto update(AccountDto acc, long id) {
+        return null;
+    }
+
+    @Override
+    public boolean removeAccount(long id) {
+        return false;
+    }
+
+
 }

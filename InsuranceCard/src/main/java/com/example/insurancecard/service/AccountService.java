@@ -6,4 +6,7 @@ import java.util.List;
 
 public interface AccountService {
     List<AccountDto> getAll();
+    AccountDto update(AccountDto acc, long id);
+
+    boolean removeAccount(long id);
 }
