@@ -33,5 +33,8 @@ public class MotorBike {
     @Column(name = "engineNumber", length = 255)
     private String engineNumber;
 
+    @ManyToOne
+    @JoinColumn(name = "account_id")
+    private Account account;
 
 }
